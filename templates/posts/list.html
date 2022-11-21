@@ -7,7 +7,7 @@
 <ul>
     {% for post in post_list %}
     <li>
-        {{post.title}}
+        <a href="{% url 'detail' post.id %}">{{post.title}}</a> 
     </li>
     {% endfor %}
 </ul>
