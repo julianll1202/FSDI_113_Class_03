@@ -4,9 +4,12 @@
 
 {% block content %}
 <h1>Log In</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Log In" class="btn btn-success">
-</form>
+<div class="post-form">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Log In" class="btn btn-success">
+    </form>
+</div>
+
 {% endblock content %} 

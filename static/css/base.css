@@ -1,0 +1,55 @@
+h1 {
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    width: 100%;
+    margin-top: 10px;
+    border-left: 4px solid #0D6EFD;
+}
+
+.post-form {
+    background-color: lightgray;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.post-form textarea {
+    height: 50px;
+}
+
+.click-link {
+    text-decoration: none;
+}
+
+.click-link:hover {
+    background-color: #0D6EFD;
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.container-fluid a {
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.nav-link span{
+    background-color: white;
+    border-radius: 10px;
+    padding: 3px;
+    color: #0D6EFD;
+}

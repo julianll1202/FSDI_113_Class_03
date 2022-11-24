@@ -19,7 +19,14 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = "posts/new.html"
     model = Post
-    fields = ['title', 'subtitle', 'author', 'body']
+    fields = ['title', 'subtitle', 'body']
+
+    # it is called whenever we submit the form
+    def form_valid(self, form):
+        # the author field is set to the usern's id
+        form.instance.author = self.request.user
+        # calls the original form to update it
+        return super().form_valid(form)
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = "posts/edit.html"
