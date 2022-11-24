@@ -8,7 +8,7 @@
 <small>Created by {{post.author}} | On {{post.created_on}}</small>
 
 <p>{{post.body}}</p>
-{% if user.is_authenticated %}
+{% if user.username == post.author.username %}
 <p>
     <a href="{% url 'update' post.id %}" class="btn btn-primary">Edit</a>
 </p>
