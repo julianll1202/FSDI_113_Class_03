@@ -33,10 +33,12 @@
                 <a class="nav-link" href="{% url 'list' %}"> <span>List <i class="bi bi-card-list"></i></span>  </a>
                 <a class="nav-link" href="{% url 'about' %}"> <span>About</span> </a>
                 {% if user.is_authenticated %}
-                <a class="nav-link" href="{% url 'new' %}">New post</a>
+                <a class="nav-link" href="{% url 'new' %}"> <span>New post</span> </a>
+                <a class="nav-link" href="{% url 'password_change' %}"> <span>Passoword change</span> </a>
                 <a class="nav-link" href="{% url 'logout' %}"> <span>Log Out <i class="bi bi-person-fill-dash"></i></span>  </a>
                 {% else %}
                 <a class="nav-link" href="{% url 'login' %}"> <span>Log In <i class="bi bi-person-fill-check"></i></span>  </a>
+                <a class="nav-link" href="{% url 'signup' %}"> <span>Sign Up<i class="bi bi-person-fill-check"></i></span>  </a>
                     {% endif %}
             </div>
             </div>
