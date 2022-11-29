@@ -4,14 +4,33 @@ from django.contrib.auth.mixins import (
 )
 from django.views.generic import ListView, DetailView
 from django.views.generic import CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, Status
 from django.urls import reverse_lazy
 
 
-# List of posts view
+# List of published posts view
 class PostListView(ListView):
     template_name = "posts/list.html"
     model = Post
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        status = Status.objects.get(id=1)
+        context["post_list"] = Post.objects.filter(
+            status=status).order_by("created_on").reverse()
+        return context
+
+# List of draft posts view
+class DraftPostListView(LoginRequiredMixin, ListView):
+    template_name = "posts/list.html"
+    model = Post
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        status = Status.objects.get(id=2)
+        context["post_list"] = Post.objects.filter(
+            status=status).filter(author=self.request.user).order_by("created_on").reverse()
+        return context
 
 # Posts detail view
 class PostDetailView(DetailView):

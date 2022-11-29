@@ -10,6 +10,7 @@
         <div class="card-body">
             <h5 class="card-title">{{post.title}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{post.subtitle}}</h6>
+            <small class="card-text">Created by: {{post.author}}</small>
             <p class="card-text">{{post.body|truncatechars:500}}</p>
             <a href="{% url 'detail' post.id %}" class="card-link">Read more...</a>
         </div>
